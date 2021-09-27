@@ -32,7 +32,7 @@ API Response:
 ```
 
 The below program will help you with the timezone conversion
-```
+```go
 package main
 
 import (
