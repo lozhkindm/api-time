@@ -8,12 +8,19 @@ import (
 )
 
 func timeHandler(w http.ResponseWriter, r *http.Request) {
+	tz := r.URL.Query().Get("tz")
+
+	if tz == "" {
+		tz = UTC
+	}
+
 	w.Header().Add("Content-Type", "application/json")
 
-	loc, err := time.LoadLocation("UTC")
+	loc, err := time.LoadLocation(tz)
 
 	if err != nil {
-		log.Fatal(err)
+		http.Error(w, "invalid timezone", http.StatusNotFound)
+		return
 	}
 
 	tr := timeResource{
