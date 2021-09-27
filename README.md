@@ -7,7 +7,7 @@ Below are the requirements
 1. The endpoint should be exposed as ```/api/time```
 
 2. The output should be in JSON
-```
+```json
 {
     "current_time": "2021-08-09 11:18:06 +0000 UTC"
 }
@@ -24,7 +24,7 @@ A list of TZ database names are available at https://en.wikipedia.org/wiki/List_
 6. **Bonus: A user can request time in multiple timezones i.e.** ```/api/time?tz=America/New_York,Asia/Kolkata```
 
 API Response:
-```
+```json
 {
     "Asia/Kolkata": "2021-08-09 01:23:42 +0530 IST",
     "America/New_York": "2021-08-09 01:23:42 -0400 EDT"
